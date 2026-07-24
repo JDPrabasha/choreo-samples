@@ -11,8 +11,8 @@ can observe whether the request is cut off before or after that duration.
 | ----------------------- | ------------------------------------------------------------------------------------------------ |
 | main.go                | The Go service code. `GET /timeout-test/sleep?seconds=N` sleeps for N seconds (default 90) before responding. |
 | Dockerfile             | Choreo uses the Dockerfile to build the container image of the application.                     |
-| .choreo/endpoints.yaml | Choreo-specific configuration. `networkVisibility` is set to `Public` so traffic goes through the managed-API gateway rather than bypassing it. |
-| openapi.yaml           | OpenAPI contract for the service, referenced by `.choreo/endpoints.yaml`.                        |
+| .choreo/component.yaml | Choreo-specific configuration. Declares `Project` and `Public` as allowed network visibilities for the endpoint. |
+| openapi.yaml           | OpenAPI contract for the service, referenced by `.choreo/component.yaml`.                        |
 
 ## Deploy Application
 
