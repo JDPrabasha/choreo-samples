@@ -1,0 +1,12 @@
+schemaVersion: "1.2"
+endpoints:
+    - name: timeout-test-803
+      displayName: Timeout Test
+      service:
+        basePath: /
+        port: 9090
+      type: REST
+      networkVisibilities:
+        - Project
+        - Public
+      schemaFilePath: openapi.yaml
