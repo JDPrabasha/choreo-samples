@@ -12,6 +12,7 @@ or after that duration.
 | ------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ |
 | timeoutTestConfigs/src/main/synapse-config/api/TimeoutTest.xml     | The Synapse API. `GET /timeout-test/sleep?seconds=N` sleeps for N seconds (default 90) before responding. |
 | timeoutTestConfigs/src/main/resources/metadata                    | API metadata and OpenAPI definition used by the Micro Integrator/Choreo tooling.                 |
+| openapi.yaml                                                      | OpenAPI contract used by Choreo's Test Console to render the `seconds` query parameter field.    |
 | pom.xml, timeoutTestConfigs, timeoutTestCompositeExporter         | Maven multi-module project structure required by the WSO2 MI buildpack.                          |
 
 ## Deploying on Choreo

@@ -1,0 +1,28 @@
+openapi: "3.0.0"
+info:
+  title: Timeout Test Service
+  version: 1.0.0
+paths:
+  /timeout-test/sleep:
+    get:
+      summary: Sleep before responding
+      description: Sleeps for the given number of seconds (default 90) before responding. Used to test whether the configured resiliency/endpoint timeout is actually enforced.
+      tags:
+        - timeout-test
+      parameters:
+        - name: seconds
+          in: query
+          description: Number of seconds to sleep before responding
+          required: false
+          schema:
+            type: integer
+            default: 90
+      responses:
+        '200':
+          description: Successful response after sleeping
+          content:
+            text/plain:
+              schema:
+                type: string
+      deprecated: false
+      security: []
