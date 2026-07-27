@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<api context="/timeout-test" name="TimeoutTest" xmlns="http://ws.apache.org/ns/synapse">
+    <resource methods="GET" uri-template="/sleep">
+        <inSequence>
+            <property name="seconds" expression="get-property('query.param.seconds')"/>
+            <script language="js"><![CDATA[
+                var seconds = parseInt(mc.getProperty('seconds'), 10);
+                if (isNaN(seconds) || seconds <= 0) {
+                    seconds = 90;
+                }
+
+                var startTime = java.lang.System.currentTimeMillis();
+                java.lang.Thread.sleep(seconds * 1000);
+                var endTime = java.lang.System.currentTimeMillis();
+
+                mc.setProperty('seconds', seconds);
+                mc.setProperty('elapsedSeconds', (endTime - startTime) / 1000);
+                mc.setProperty('respondedAt', new Date(endTime).toISOString());
+            ]]></script>
+            <payloadFactory media-type="text">
+                <format>Slept for $1s (requested $2s), responded at $3</format>
+                <args>
+                    <arg expression="$ctx:elapsedSeconds"/>
+                    <arg expression="$ctx:seconds"/>
+                    <arg expression="$ctx:respondedAt"/>
+                </args>
+            </payloadFactory>
+            <property name="messageType" value="text/plain" scope="axis2"/>
+            <property name="ContentType" value="text/plain" scope="axis2"/>
+            <respond/>
+        </inSequence>
+        <outSequence>
+            <send/>
+        </outSequence>
+        <faultSequence/>
+    </resource>
+</api>

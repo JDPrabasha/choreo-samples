@@ -1,0 +1,20 @@
+openapi: 3.0.1
+info:
+  title: TimeoutTest
+  description: API Definition of TimeoutTest
+  version: 1.0.0
+servers:
+- url: http://localhost:8290/timeout-test
+paths:
+  /sleep:
+    get:
+      parameters:
+      - name: seconds
+        in: query
+        required: false
+        schema:
+          type: integer
+          default: 90
+      responses:
+        default:
+          description: Default response

@@ -1,0 +1,11 @@
+---
+key: "TimeoutTest-1.0.0"
+name : "TimeoutTest"
+displayName : "TimeoutTest"
+description: "Timeout Test API for verifying resiliency timeout enforcement"
+version: "1.0.0"
+serviceUrl: "https://{MI_HOST}:{MI_PORT}/timeout-test"
+definitionType: "OAS3"
+securityType: "BASIC"
+mutualSSLEnabled: false
+apiId : "null"

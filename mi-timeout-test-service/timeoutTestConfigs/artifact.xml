@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?><artifacts>
+    <artifact name="TimeoutTest" groupId="wso2.sampleTimeoutTest.api" version="1.0.0" type="synapse/api" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/api/TimeoutTest.xml</file>
+    </artifact>
+    <artifact name="TimeoutTest_swagger" groupId="wso2.sampleTimeoutTest.metadata" version="1.0.0" type="synapse/metadata" serverRole="EnterpriseServiceBus">
+        <file>src/main/resources/metadata/TimeoutTest_swagger.yaml</file>
+    </artifact>
+    <artifact name="TimeoutTest_metadata" groupId="wso2.sampleTimeoutTest.metadata" version="1.0.0" type="synapse/metadata" serverRole="EnterpriseServiceBus">
+        <file>src/main/resources/metadata/TimeoutTest_metadata.yaml</file>
+    </artifact>
+</artifacts>
