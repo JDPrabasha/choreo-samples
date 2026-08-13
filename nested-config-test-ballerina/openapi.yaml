@@ -1,0 +1,37 @@
+openapi: "3.0.0"
+info:
+  title: Nested Config Test Service
+  version: 1.0.0
+paths:
+  /nested-config-test/destinations:
+    get:
+      summary: Get configured destinations
+      description: Returns the `destinations` configurable — an array of primitives.
+      tags:
+        - nested-config-test
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: string
+      deprecated: false
+      security: []
+  /nested-config-test/profile:
+    get:
+      summary: Get configured profile
+      description: Returns the `profile` configurable — a record nested inside a record, with arrays of primitives and arrays of records at multiple levels.
+      tags:
+        - nested-config-test
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+      deprecated: false
+      security: []

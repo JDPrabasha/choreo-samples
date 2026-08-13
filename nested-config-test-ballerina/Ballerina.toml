@@ -1,0 +1,8 @@
+[package]
+org = "choreo"
+name = "nested_config_test"
+version = "1.0.0"
+distribution = "2201.8.6"
+
+[build-options]
+observabilityIncluded = true
