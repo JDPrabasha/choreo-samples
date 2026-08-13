@@ -1,0 +1,15 @@
+{
+  "name": "byoi-react-ssr-timeout-test",
+  "version": "1.0.0",
+  "private": true,
+  "description": "SSR React web app with a long-running report-generation endpoint, used to test Choreo endpoint timeout configuration for BYOI Web Application components.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  }
+}
