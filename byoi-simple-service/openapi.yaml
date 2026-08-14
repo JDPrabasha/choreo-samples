@@ -1,0 +1,24 @@
+openapi: "3.0.0"
+info:
+  title: Simple Service
+  version: 1.0.0
+paths:
+  /hello:
+    get:
+      summary: Return a static greeting
+      description: Returns a static JSON greeting. Used as a baseline for verifying BYOI Service deployments.
+      tags:
+        - hello
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: hello world
+      deprecated: false
+      security: []

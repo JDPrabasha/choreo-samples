@@ -12,6 +12,7 @@ BYOI Service deployments in Choreo.
 | main.go                 | Go service. `GET /hello` returns `{"message": "hello world"}`.                    |
 | Dockerfile              | Builds the container image to push to your registry for BYOI deployment.          |
 | .choreo/endpoints.yaml  | Endpoint configuration to use when creating the BYOI component in Choreo.         |
+| openapi.yaml            | OpenAPI contract for `/hello`, referenced by `.choreo/endpoints.yaml` so it shows up in the Choreo Test Console. |
 
 ## Execute the Sample Locally
 
